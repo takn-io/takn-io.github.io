@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'LogoFont';
+    src:  url('../assets/fonts/Montserrat-Light-Alt1.woff2') format('woff2')
+}
+
+body {
+    margin: 0;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    font-family: 'LogoFont';
+    font-size: 10em;
+    font-weight: 900;
+    background: linear-gradient(to right, #1b56d5, #41e6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
