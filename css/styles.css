@@ -40,3 +40,15 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 6em;
+    }
+}
+
+@media (min-width:1000px) {
+    .logo {
+        font-size: 15em;
+    }
+}
