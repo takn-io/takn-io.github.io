@@ -3,18 +3,173 @@
     src: url('../assets/fonts/Montserrat-Light-Alt1.woff2') format('woff2')
 }
 
+:root {
+    --primary-color: #41afff;
+    --primary-color-selected: #1b56d5;
+}
+
 body {
     margin: 0;
+    background-color:white;
+    color:black;
+    height: 100vh;
+    user-select: none;
+    min-width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+    font-family: 'LogoFont';
+    font-size: 10em;
+    font-weight: 900;
+    background: linear-gradient(to right, #1b56d5, #41e6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mobile {
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    min-width: 320px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: whitesmoke 0px -1px 0px 1px;
+    background-color: whitesmoke;
+    border-bottom: lightgray solid 1px;
+    font-weight: bold;
+    color: #222222;
+}
+
+header section {
+    display: flex;
+}
+
+header section div {
+    margin: 10px;
+}
+
+.logo-letters {
+    margin-left: 20px;
+    font-family: 'LogoFont';
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(to right, #1b56d5, #41afff);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.base-logo-letters {
+    margin-left: 20px;
+    font-family: 'LogoFont';
+    font-size: 2rem;
+    font-weight: 900;
+    margin:0;
+}
+
+.button-section {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 40px;
+    
+    cursor: pointer;
+    min-width: 145px;
+    text-align: center;
+    border: 2px solid;
+    box-sizing: border-box;
+    margin: 10px 10px 10px 0;
+}
+
+.primary-button {
+    color: whitesmoke;
+    border-color: transparent;
+}
+
+.secondary-button {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.button:hover {
+    background-color: var(--primary-color-selected);
+}
+
+.button:active {
+    background-color: var(--primary-color-selected);
+}
+
+.burger {
+    z-index: 200;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background-image: url("https://assets.website-files.com/5e6ba7d73bd4764a57337c92/5e835fa9ed3ffac2f5117967_icon-menu.svg");
+    background-position: 50% 50%;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    border: solid 2px whitesmoke;
+    cursor: pointer;
+    margin: 0;
+}
+
+.burger:hover {
+    border: solid 2px darkgray;
+}
+
+.burger:active {
+    background-color: whitesmoke;
+}
+
+header .link {
+    color: whitesmoke;
+}
+
+header .link:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+/* MAIN */
+
+main {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-main {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border-radius: 20px;
     background-color: #222222;
     background-size: 300%;
     background-image: linear-gradient(120deg, rgba(0, 0, 0, 1) 0%, rgba(41, 41, 61, 1) 76%, rgba(65, 66, 71, 1) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     animation: bg-animation 5s infinite;
     user-select: none;
-    min-width: 320;
+    border:3px solid whitesmoke;
 }
 
 @keyframes bg-animation {
@@ -32,23 +187,80 @@ body {
     }
 }
 
-.logo {
+.A-letter {
     font-family: 'LogoFont';
     font-size: 10em;
-    font-weight: 900;
+    font-weight: bold;
     background: linear-gradient(to right, #1b56d5, #41e6ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 6em;
+.intro-main h2 {
+    font-family: 'LogoFont';
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-align: center;
+    margin:0;
+}
+
+main section {
+    width: 90%;
+}
+
+.bottom-menu {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+    justify-content: space-around;
+}
+
+.bottom-menu .logo-letters {
+    margin-top:30px;
+}
+
+.footer-legal {
+    padding-top:20px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    padding:20px;
+    color: darkgrey;
+}
+.footer-legal a {
+    text-decoration: none;
+    color:darkgrey;
+}
+
+@media (max-width: 750px) {
+    .mobile {
+        display: block;
     }
-}
-
-@media (min-width:1000px) {
-    .logo {
-        font-size: 15em;
+    .logo-letters {
+        font-size: 1.5rem;
+    }
+    .button {
+        font-size: 0.8em;
+        min-width: 100px;
+    }
+    .desktop {
+        display: none;
+    }
+    .button-section-header {
+        margin-right: 10px;
+    }
+    .logo-letters {
+        margin-left: 10px;
+    }
+    .bottom-menu {
+        flex-direction: column;
+    }
+    .bottom-menu div {
+        margin-left: 20px;
     }
 }
